@@ -1,11 +1,14 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: WisperPluginProject
-Bundle-SymbolicName: WisperPluginProject
+Bundle-SymbolicName: WisperPluginProject;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Activator: wisperpluginproject.Activator
 Bundle-Vendor: wisper.bizreach.co.jp
 Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors,
+ org.eclipse.jdt.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
