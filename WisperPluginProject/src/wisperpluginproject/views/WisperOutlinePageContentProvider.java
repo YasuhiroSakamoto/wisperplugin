@@ -6,43 +6,40 @@ import org.eclipse.jface.viewers.Viewer;
 
 public class WisperOutlinePageContentProvider implements ITreeContentProvider {
 
+	private WisperOutlinePageOutlineNode root;
+	
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
-		
+		root = null;
 	}
 
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Object[] getElements(Object inputElement) {
-		// TODO Auto-generated method stub
-		return null;
+		root = (WisperOutlinePageOutlineNode)newInput;
 	}
 
 	@Override
 	public Object[] getChildren(Object parentElement) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object getParent(Object element) {
-		// TODO Auto-generated method stub
-		return null;
+		WisperOutlinePageOutlineNode node = (WisperOutlinePageOutlineNode)parentElement;
+		return node.childs.toArray();
 	}
 
 	@Override
 	public boolean hasChildren(Object element) {
-		// TODO Auto-generated method stub
-		return false;
+		WisperOutlinePageOutlineNode node = (WisperOutlinePageOutlineNode)element;
+		return node.childs.size() > 0;
 	}
 
+	@Override
+	public Object[] getElements(Object inputElement) {
+		WisperOutlinePageOutlineNode node = (WisperOutlinePageOutlineNode)inputElement;
+		return node.childs.toArray();
+	}
 
-	
+	@Override
+	public Object getParent(Object element) {
+		WisperOutlinePageOutlineNode node = (WisperOutlinePageOutlineNode)element;
+		return node.parent;
+	}
 	
 }

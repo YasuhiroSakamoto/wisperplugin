@@ -1,5 +1,9 @@
 package wisperpluginproject;
 
+import java.util.HashMap;
+
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -14,10 +18,13 @@ public class Activator extends AbstractUIPlugin {
 	// The shared instance
 	private static Activator plugin;
 	
+	private static HashMap<String, Image> imageCash;
+	
 	/**
 	 * The constructor
 	 */
 	public Activator() {
+		imageCash = new HashMap<String, Image>();
 	}
 
 	/*
@@ -45,6 +52,22 @@ public class Activator extends AbstractUIPlugin {
 	 */
 	public static Activator getDefault() {
 		return plugin;
+	}
+	
+	public static Image getImage(String path)
+	{
+		ImageDescriptor desc;
+		Image image;
+		
+		image = imageCash.get(path);
+		if(image == null)
+		{
+			desc = imageDescriptorFromPlugin(PLUGIN_ID, path);
+			image = desc.createImage();
+			imageCash.put(path, image);
+		}
+		return image;
+		
 	}
 
 }

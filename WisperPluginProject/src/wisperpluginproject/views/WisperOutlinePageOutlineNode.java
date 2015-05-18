@@ -10,6 +10,9 @@ public class WisperOutlinePageOutlineNode {
 	//子ノード
 	public ArrayList<WisperOutlinePageOutlineNode> childs;
 
+	//親ノード
+	public WisperOutlinePageOutlineNode parent;
+	
 	//対応範囲
 	public IRegion region;
 	
@@ -27,6 +30,7 @@ public class WisperOutlinePageOutlineNode {
 		label = null;
 		desc = null;
 		region = null;
+		parent = null;
 	}
 
 	//階層構造での比較ルール

@@ -1,0 +1,31 @@
+!SESSION 2015-05-18 11:29:58.924 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_31
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=ja_JP
+Framework arguments:  -product org.eclipse.epp.package.rcp.product -keyring /Users/yasuhiro.sakamoto/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.rcp.product -keyring /Users/yasuhiro.sakamoto/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2015-05-18 11:30:19.114
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jface 2 0 2015-05-18 11:30:19.495
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-05-18 11:30:19.495
+!MESSAGE A conflict occurred for COMMAND+SHIFT+-:
+Binding(COMMAND+SHIFT+-,
+	ParameterizedCommand(Command(org.eclipse.ui.window.splitEditor,Toggle Split Editor,
+		Split or join the currently active editor.,
+		Category(org.eclipse.ui.category.window,Window,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6f106af8,
+		[Lorg.eclipse.e4.ui.internal.workbench.Parameter;@1edf71d9,,true),[Lorg.eclipse.core.commands.Parameterization;@52d9d817),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,ja,,system)
+Binding(COMMAND+SHIFT+-,
+	ParameterizedCommand(Command(org.eclipse.ui.window.splitEditor,Toggle Split Editor,
+		Split or join the currently active editor.,
+		Category(org.eclipse.ui.category.window,Window,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6f106af8,
+		[Lorg.eclipse.e4.ui.internal.workbench.Parameter;@1edf71d9,,true),[Lorg.eclipse.core.commands.Parameterization;@131ba005),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)

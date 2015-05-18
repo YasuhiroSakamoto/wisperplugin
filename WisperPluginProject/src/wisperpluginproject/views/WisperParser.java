@@ -102,6 +102,7 @@ public class WisperParser {
 		if((depthLabels.length - 1) == parentLabels.length)
 		{
 			parent.childs.add(node);
+			node.parent = parent;
 			return;
 		}
 		else
@@ -112,7 +113,7 @@ public class WisperParser {
 				WisperOutlinePageOutlineNode child = parent.childs.get(i);
 				if(child.label.split("-")[depth].equals(depthLabels[depth]))
 				{
-					createDepthNode(node, child, depth++);
+					createDepthNode(node, child, depth+1);
 					return;
 				}
 			}
