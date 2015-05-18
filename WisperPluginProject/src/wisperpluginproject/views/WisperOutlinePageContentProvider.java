@@ -1,21 +1,16 @@
 package wisperpluginproject.views;
 
-import org.eclipse.jface.viewers.IContentProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
 public class WisperOutlinePageContentProvider implements ITreeContentProvider {
-
-	private WisperOutlinePageOutlineNode root;
 	
 	@Override
 	public void dispose() {
-		root = null;
 	}
 
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		root = (WisperOutlinePageOutlineNode)newInput;
 	}
 
 	@Override

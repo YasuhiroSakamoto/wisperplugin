@@ -1,11 +1,12 @@
 package wisperpluginproject.editors;
 
-import org.eclipse.ui.editors.text.TextEditor;
+import org.eclipse.jface.text.source.ISourceViewer;
+import org.eclipse.ui.texteditor.AbstractTextEditor;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 
 import wisperpluginproject.views.WisperOutlinePage;
 
-public class WisperEditor extends TextEditor {
+public class WisperEditor extends AbstractTextEditor {
 
 	private ColorManager colorManager;
 	private WisperOutlinePage outlinePage = null;
@@ -34,6 +35,11 @@ public class WisperEditor extends TextEditor {
 		}
 		
 		return super.getAdapter(adapter);
+	}
+	
+	public ISourceViewer getISourceViewer()
+	{
+		return getSourceViewer();
 	}
 	
 }

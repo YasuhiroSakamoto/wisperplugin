@@ -122,4 +122,24 @@ public class WisperParser {
 		
 	}
 	
+	/**
+	 * カーソル位置に対応するNodeを返却する
+	 * @param root
+	 * @return
+	 */
+	public static WisperOutlinePageOutlineNode getCaretNode(int caretOffset,WisperOutlinePageOutlineNode root)
+	{
+		ArrayList<WisperOutlinePageOutlineNode> nodes;
+		nodes = root.totalChilds();
+		for(int i = 0 ; i < nodes.size() ; i++)
+		{
+			WisperOutlinePageOutlineNode node = nodes.get(i);
+			if((node.region.getOffset() <= caretOffset) && (caretOffset <= (node.region.getOffset() + node.region.getLength())))
+			{
+				return node;
+			}
+		}
+		return null;
+	}
+	
 }

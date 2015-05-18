@@ -33,6 +33,21 @@ public class WisperOutlinePageOutlineNode {
 		parent = null;
 	}
 
+	/**
+	 * 小階層すべての子を取得
+	 * @return
+	 */
+	public ArrayList<WisperOutlinePageOutlineNode> totalChilds()
+	{
+		ArrayList<WisperOutlinePageOutlineNode> nodes = new ArrayList<WisperOutlinePageOutlineNode>();
+		nodes.addAll(childs);
+		for(int i = 0 ; i < childs.size() ; i++)
+		{
+			nodes.addAll(childs.get(i).totalChilds());
+		}
+		return nodes;
+	}
+	
 	//階層構造での比較ルール
 	public static class DepthComparator implements Comparator<WisperOutlinePageOutlineNode> {
 
